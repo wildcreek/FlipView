@@ -71,7 +71,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		// Create a new 3D rotation with the supplied parameter
 		// The animation listener is used to trigger the next animation
 		final Rotate3dAnimation rotation = new Rotate3dAnimation(start, end,
-				centerX, centerY, 310.0f, true);
+				centerX, centerY, 0.0f, true);
 		rotation.setDuration(500);
 		rotation.setFillAfter(true);
 		rotation.setInterpolator(new AccelerateInterpolator());
@@ -87,7 +87,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			Log.e("Main", "点击了ll_infos");
 			break;
 		case R.id.ll_motto:
-			applyRotation(-1, 180, 90);
+			applyRotation(-1, 0, 90);
 			Log.e("Main", "点击了ll_motto");
 			break;
 		default:
@@ -135,20 +135,20 @@ public class MainActivity extends Activity implements View.OnClickListener {
 			final float centerY = mContainer.getHeight() / 2.0f;
 			Rotate3dAnimation rotation;
 
-			if (mPosition > -1) {
+			if (mPosition > -1) {//点击正面条目
 				ll_infos.setVisibility(View.GONE);
 				ll_motto.setVisibility(View.VISIBLE);
 				ll_motto.requestFocus();
 
-				rotation = new Rotate3dAnimation(90, 180, centerX, centerY,
-						310.0f, false);
-			} else {
+				rotation = new Rotate3dAnimation(-90, 0, centerX, centerY,
+						0.0f, false);
+			} else {//点击后面条目
 				ll_motto.setVisibility(View.GONE);
 				ll_infos.setVisibility(View.VISIBLE);
 				ll_infos.requestFocus();
 
-				rotation = new Rotate3dAnimation(90, 0, centerX, centerY,
-						310.0f, false);
+				rotation = new Rotate3dAnimation(-90, 0, centerX, centerY,
+						0.0f, false);
 			}
 
 			rotation.setDuration(500);
