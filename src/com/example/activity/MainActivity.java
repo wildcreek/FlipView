@@ -3,6 +3,7 @@ package com.example.activity;
 import com.example.flipview.R;
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -37,6 +38,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 		// Prepare the ListView
 		ll_infos.setClickable(true);
+		ll_infos.setFocusable(true);
 		ll_infos.setOnClickListener(this);
 
 		// Prepare the ImageView
@@ -78,22 +80,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		mContainer.startAnimation(rotation);
 	}
 
- 
-
 	public void onClick(View v) {
 		switch (v.getId()) {
 		case R.id.ll_infos:
-			applyRotation(-1, 0, 90);
+			applyRotation(0, 0, 90);
+			Log.e("Main", "点击了ll_infos");
 			break;
 		case R.id.ll_motto:
 			applyRotation(-1, 180, 90);
+			Log.e("Main", "点击了ll_motto");
 			break;
 		default:
 			break;
 		}
 		
 	}
-
+ 
 	/**
 	 * This class listens for the end of the first half of the animation. It
 	 * then posts a new action that effectively swaps the views when the
@@ -157,6 +159,5 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		}
 	}
 
- 
-
+  
 }
