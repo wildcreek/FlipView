@@ -57,8 +57,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 		// Since we are caching large views, we want to keep their cache
 		// between each animation
-		mContainer
-				.setPersistentDrawingCache(ViewGroup.PERSISTENT_ANIMATION_CACHE);
+		mContainer.setPersistentDrawingCache(ViewGroup.PERSISTENT_ANIMATION_CACHE);
+		
+		//初始化数据
 		initData();
 	}
 
