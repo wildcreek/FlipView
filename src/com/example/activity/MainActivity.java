@@ -77,7 +77,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		// The animation listener is used to trigger the next animation
 		final Rotate3dAnimation rotation = new Rotate3dAnimation(start, end,
 				centerX, centerY, 0.0f, true);
-		rotation.setDuration(300);
+		rotation.setDuration(350);
 		rotation.setFillAfter(true);
 		rotation.setInterpolator(new AccelerateInterpolator());
 		rotation.setAnimationListener(new DisplayNextView(position));
@@ -167,7 +167,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 						0.0f, false);
 			}
 
-			rotation.setDuration(300);
+			rotation.setDuration(350);
 			rotation.setFillAfter(true);
 			rotation.setInterpolator(new DecelerateInterpolator());
 
