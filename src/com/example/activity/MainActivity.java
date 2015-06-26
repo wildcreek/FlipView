@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 /**
  * @version 1.0
@@ -25,6 +26,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
 	private LinearLayout ll_infos;
 	private ViewGroup mContainer;
 	private LinearLayout ll_motto;
+	private LinearLayout ll_day;
+	private LinearLayout ll_people;
+	private LinearLayout ll_rank;
+	private TextView tv_motto;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -35,15 +40,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		ll_infos = (LinearLayout) findViewById(R.id.ll_infos);
 		mContainer = (ViewGroup) findViewById(R.id.container);
 		ll_motto = (LinearLayout) findViewById(R.id.ll_motto);
+		
+		ll_day = (LinearLayout) findViewById(R.id.ll_day);
+		ll_people = (LinearLayout) findViewById(R.id.ll_people);
+		ll_rank = (LinearLayout) findViewById(R.id.ll_rank);
+		tv_motto = (TextView) findViewById(R.id.tv_motto);
 
-		// Prepare the ListView
-		ll_infos.setClickable(true);
-		ll_infos.setFocusable(true);
-		ll_infos.setOnClickListener(this);
-
-		// Prepare the ImageView
-		ll_motto.setClickable(true);
-		ll_motto.setFocusable(true);
+		ll_day.setOnClickListener(this);
+		ll_people.setOnClickListener(this);
+		ll_rank.setOnClickListener(this);
 		ll_motto.setOnClickListener(this);
 
 		// Since we are caching large views, we want to keep their cache
@@ -82,9 +87,20 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 	public void onClick(View v) {
 		switch (v.getId()) {
-		case R.id.ll_infos:
+		case R.id.ll_day:
 			applyRotation(0, 0, 90);
-			Log.e("Main", "点击了ll_infos");
+			tv_motto.setText("理想犹如天上的星星,我们犹如水手,虽不能到达天上,但是我们的航程可凭他指引  --舒尔茨");
+			Log.e("Main", "点击了ll_day");
+			break;
+		case R.id.ll_people:
+			applyRotation(0, 0, 90);
+			tv_motto.setText("点击了竞争人数");
+			Log.e("Main", "点击了ll_people");
+			break;
+		case R.id.ll_rank:
+			applyRotation(0, 0, 90);
+			tv_motto.setText("点击了目前排名");
+			Log.e("Main", "点击了ll_rank");
 			break;
 		case R.id.ll_motto:
 			applyRotation(-1, 0, 90);

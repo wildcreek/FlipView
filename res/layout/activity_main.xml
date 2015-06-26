@@ -8,8 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#43ACBB"
-        android:clickable="true"
-		android:focusable="true"
         android:divider="@drawable/divider_line"
         android:dividerPadding="10dp"
         android:orientation="horizontal"
@@ -18,12 +16,10 @@
         <LinearLayout
             android:id="@+id/ll_day"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
-            android:orientation="vertical"
-          
- 		 >
+            android:orientation="vertical" >
 
             <TextView
                 android:id="@+id/tv_day"
@@ -44,8 +40,10 @@
         <LinearLayout
             android:id="@+id/ll_people"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:orientation="vertical"
             android:paddingBottom="5dp"
@@ -70,8 +68,10 @@
         <LinearLayout
             android:id="@+id/ll_rank"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
+            android:clickable="true"
+            android:focusable="true"
             android:gravity="center"
             android:orientation="vertical"
             android:paddingBottom="5dp"
@@ -99,9 +99,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#43ACBB"
-        android:gravity="center"
         android:clickable="true"
-		android:focusable="true"
+        android:focusable="true"
+        android:gravity="center"
         android:orientation="vertical"
         android:visibility="gone" >
 
@@ -111,8 +111,8 @@
             android:layout_height="wrap_content"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
-            android:textColor="#fff"
-            android:text="理想犹如天上的星星,我们犹如水手,虽不能到达天上,但是我们的航程可凭他指引  --舒尔茨" />
+            android:text="理想犹如天上的星星,我们犹如水手,虽不能到达天上,但是我们的航程可凭他指引  --舒尔茨"
+            android:textColor="#fff" />
     </LinearLayout>
 
 </FrameLayout>
