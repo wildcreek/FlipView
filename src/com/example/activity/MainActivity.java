@@ -30,6 +30,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
 	private LinearLayout ll_people;
 	private LinearLayout ll_rank;
 	private TextView tv_motto;
+	private String [] dayStrs;
+	private String [] peopleStrs;
+	private String [] rankStrs;
+	private int [] currentIndexs;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +59,16 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		// between each animation
 		mContainer
 				.setPersistentDrawingCache(ViewGroup.PERSISTENT_ANIMATION_CACHE);
+		initData();
+	}
+
+	private void initData() {
+		dayStrs = new String[] {"真理惟一可靠的标准就是永远自相符合。 —— 欧文",
+				"理想犹如天上的星星,我们犹如水手,虽不能到达天上,但是我们的航程可凭他指引  —— 舒尔茨",
+				"时间是一切财富中最宝贵的财富。 —— 德奥弗拉斯多"};
+		peopleStrs = new String[] {"竞争人数1","竞争人数2","竞争人数3","竞争人数4"};
+		rankStrs = new String[] {"目前排名1","目前排名2","目前排名3","目前排名4","目前排名5"};
+		currentIndexs = new int[]{0,0,0};
 	}
 
 	/**
@@ -89,17 +103,39 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		switch (v.getId()) {
 		case R.id.ll_day:
 			applyRotation(0, 0, 90);
-			tv_motto.setText("理想犹如天上的星星,我们犹如水手,虽不能到达天上,但是我们的航程可凭他指引  -- 舒尔茨");
+			if(currentIndexs[0] != dayStrs.length){
+				tv_motto.setText(dayStrs[currentIndexs[0]]);
+				currentIndexs[0]++;
+			}else{
+				currentIndexs[0] = 0;
+				tv_motto.setText(dayStrs[currentIndexs[0]]);
+				currentIndexs[0]++;
+			}
+			
 			Log.e("Main", "点击了ll_day");
 			break;
 		case R.id.ll_people:
 			applyRotation(0, 0, 90);
-			tv_motto.setText("点击了竞争人数");
+			if(currentIndexs[1] != peopleStrs.length){
+				tv_motto.setText(peopleStrs[currentIndexs[1]]);
+				currentIndexs[1]++;
+			}else{
+				currentIndexs[1] =0;
+				tv_motto.setText(peopleStrs[currentIndexs[1]]);
+				currentIndexs[1]++;
+			}
 			Log.e("Main", "点击了ll_people");
 			break;
 		case R.id.ll_rank:
 			applyRotation(0, 0, 90);
-			tv_motto.setText("点击了目前排名");
+			if(currentIndexs[2] != rankStrs.length){
+				tv_motto.setText(rankStrs[currentIndexs[2]]);
+				currentIndexs[2]++;
+			}else{
+				currentIndexs[2] = 0;
+				tv_motto.setText(rankStrs[currentIndexs[2]]);
+				currentIndexs[2]++;
+			}
 			Log.e("Main", "点击了ll_rank");
 			break;
 		case R.id.ll_motto:
