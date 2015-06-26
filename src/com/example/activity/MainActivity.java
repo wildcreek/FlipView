@@ -89,7 +89,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 		switch (v.getId()) {
 		case R.id.ll_day:
 			applyRotation(0, 0, 90);
-			tv_motto.setText("理想犹如天上的星星,我们犹如水手,虽不能到达天上,但是我们的航程可凭他指引  --舒尔茨");
+			tv_motto.setText("理想犹如天上的星星,我们犹如水手,虽不能到达天上,但是我们的航程可凭他指引  -- 舒尔茨");
 			Log.e("Main", "点击了ll_day");
 			break;
 		case R.id.ll_people:
